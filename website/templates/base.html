@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'website/style.css' %}" />
+    <title>{% block title%}{%endblock%}</title>
+  </head>
+  <body>
+    {% comment %} ADD Navigation menu {% endcomment %}
+    <main>
+      {% if news %}
+      <nav>
+        <div class="nav-container">
+          <a class="button is-ghost" href="{% url 'home' %}">
+            <img src="./../../static/website/y18.gif" />
+            <strong>Hacker News</strong>
+          </a>
+          <div id="navbar">
+            <a class="button is-ghost" href="{% url 'welcome' %}">Welcome</a>
+            <a class="button is-ghost" href="{% url 'jobs' %}">Jobs</a>
+          </div>
+        </div>
+      </nav>
+      {%endif%}
+      {% block content %} {% endblock %}
+    </main>
+    {% csrf_token %}
+    <Script src="{% static 'website/app.js'%}"></Script>
+  </body>
+
+</html>

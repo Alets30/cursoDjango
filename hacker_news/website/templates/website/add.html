@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% load static %}
+{%block content%}
+    <h1 class="title">Add Hacker New</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="button" type="submit">Enviar</button>
+    </form>
+{%endblock%}

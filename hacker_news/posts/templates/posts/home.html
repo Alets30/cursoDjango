@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% load static %} {% block title%} Hacker News
+{%endblock%} {% block content %} {% for new in news %}
+<p class="content-new-link">
+  {{forloop.counter}} <span data-hn={{new.id}} class="caret">-</span>
+  <a class="button is-ghost" href="{{new.link}}">{{new.title}}</a>
+</p>
+
+<div class="small">
+  {{new.points}} points, published by {{new.author}}
+  {{new.publicationDate|date:"g"}} ago.
+</div>
+{% endfor %} {% endblock %}

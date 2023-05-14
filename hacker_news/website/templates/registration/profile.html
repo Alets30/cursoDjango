@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% load static%} {%block content%}
+
+<h1 class="title">User Account</h1>
+<h2 class="subtitle">{{user.username}}</h2>
+<hr />
+
+<p>FULLNAME: {{name}}</p>
+<form method="post">
+  {%csrf_token%} {{form.as_p}}
+  <button class="button" type="submit">Save</button>
+  <p><a href="{% url 'password' %}">Change Password</a></p>
+  <hr />
+
+  <a class="button" href="{% url 'home' %}">Back to Home</a>
+</form>
+
+{%endblock%}
