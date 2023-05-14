@@ -1,0 +1,6 @@
+{% extends 'base.html' %} {% load static %} {% block title%} Hacker News
+{%endblock%} {% block content %} {% for new in news %}
+<p>
+  <a href="{{new.link}}">{{new.title}}</a>
+</p>
+{% endfor %} {% endblock %}

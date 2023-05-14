@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% load static %} {% block title%} Hacker News
+{%endblock%}
+
+{%block content %}
+    {% for new in news %}
+    <p>
+        {{forloop.counter}}
+    <a href = "{{new.link}}">{{new.title}}</a>
+        <p class="small">{{new.points}} {{new.author}} agregó la noticia hace {{new.publicationDate|date:"g"}} hrs. </p>
+    </p>
+    {% endfor %}
+{% endblock %}

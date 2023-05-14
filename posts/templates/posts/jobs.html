@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for job in jobs %}
+    <p>
+      <a class="button is-ghost" href="{{job.link}}">{{job.title}}</a>
+    </p>
+    {% endfor %}
+  </body>
+</html>
+{% endblock %}
