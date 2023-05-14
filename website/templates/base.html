@@ -31,5 +31,8 @@
       {%endif%}
       {% block content %} {% endblock %}
     </main>
+    {% csrf_token %}
+    <Script src="{% static 'website/app.js'%}"></Script>
   </body>
+
 </html>

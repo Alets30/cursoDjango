@@ -5,6 +5,9 @@ nav {
 }
 .nav-container {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
 }
 
 #navbar > a {
@@ -32,14 +35,14 @@ div {
   color: #828282;
 }
 
-#caret {
-  background-image: url("https://news.ycombinator.com/grayarrow.gif");
+.caret {
   background-position: center center;
   background-repeat: no-repeat;
   width: 10px;
   height: 10px;
   display: block;
   margin: 0 2px;
+  cursor: pointer;
 }
 .container {
   flex-direction: column;
@@ -55,7 +58,7 @@ div {
 }
 
 .small {
-  font-size: 7pt;
+  font-size: 10pt;
   padding: 0 0 0 30px;
   color: #828282;
 }
@@ -95,4 +98,11 @@ hr {
 .error-container {
   flex-direction: column;
   justify-content: center;
+}
+.content-new-link {
+  display: flex;
+  align-items: center;
+}
+.content-new-link a {
+  padding-left: 2px;
 }

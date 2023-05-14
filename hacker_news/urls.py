@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from website.views import welcome
-from posts.views import add
+from website.views import welcome, upvote
+from posts.views import add, sign_up
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('welcome',welcome, name="welcome"),
     path('', include("posts.urls") ),
-    path('add', add, name="add")
+    path('add', add, name="add"),
+    path('upvote', upvote, name="upvote"),
+    path('sign_up', sign_up, name="register" )
 ]
 handler404 = "website.views.page_not_found"

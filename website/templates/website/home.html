@@ -1,12 +1,12 @@
 {% extends 'base.html' %} {% load static %} {% block title%} Hacker News
-{%endblock%}
+{%endblock%} {% block content %} {% for new in news %}
+<p class="content-new-link">
+  {{forloop.counter}} <span class="caret"></span>
+  <a class="button is-ghost" href="{{new.link}}">{{new.title}}</a>
+</p>
 
-{%block content %}
-    {% for new in news %}
-    <p>
-        {{forloop.counter}}
-    <a href = "{{new.link}}">{{new.title}}</a>
-        <p class="small">{{new.points}} {{new.author}} agregó la noticia hace {{new.publicationDate|date:"g"}} hrs. </p>
-    </p>
-    {% endfor %}
-{% endblock %}
+<div class="small">
+  {{new.points}} points, published by {{new.author}}
+  {{new.publicationDate|date:"g"}} ago.
+</div>
+{% endfor %} {% endblock %}
